@@ -4,8 +4,8 @@ Pretty commonly, when performing asynchronous operations, you might fire off mul
 the last result that comes back. A common example is searching:
 
 ```js
-$(search).on("input", function (ev) {
-    doSearch(ev.currentTarget.value).then(updateUIWithResults).done();
+$(searchEl).on("input", function (ev) {
+    doSearch(searchEl.value).then(updateUIWithResults).done();
 });
 ```
 
@@ -25,17 +25,19 @@ Well, this package will solve your problems.
 
 This package's main module has as its default export a single function, `last`, which you can use to wrap naïve
 functions into smart ones that will ignore all but the last result. It works with any function that returns a
-[Promises/A+](http://promisesaplus.com/)-compliant promise.
+[Promises/A+](http://promisesaplus.com/)-compliant promise. Once you do that, your code can look just as pretty as the
+above example, but this time it will actually be correct!
 
 ```js
 var last = require("last");
 
 var smartSearch = last(doSearch);
 
-$(search).on("input", function (ev) {
-    smartSearch(ev.currentTarget.value).then(updateUIWithResults).done();
+$(searchEl).on("input", function (ev) {
+    smartSearch(searchEl.value).then(updateUIWithResults).done();
 });
 ```
 
 The wrapped function will return a Q promise. (In future versions, we'll try to return promises of the same type you
-pass in.)
+pass in.) Once you call the function again, you will be guaranteed that previously-returned pending promises stay
+pending forever, and so you don't have to worry about them coming back later than your new promise.
