@@ -6,7 +6,7 @@ require("chai").use(require("chai-as-promised"));
 require("chai").should();
 
 var sinon = require("sinon");
-var Q = require("Q");
+var Q = require("q");
 var last = require("..");
 
 describe("When the operation is only called once and fulfills", function () {
