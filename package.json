@@ -1,0 +1,30 @@
+{
+  "name": "last",
+  "description": "A small helper for getting only the last result of an asynchronous operation you perform multiple times in a row.",
+  "keywords": [
+    "async",
+    "multiple",
+    "search",
+    "promises"
+  ],
+  "version": "1.0.0",
+  "author": "Domenic Denicola <domenic@domenicdenicola.com> (http://domenicdenicola.com)",
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/domenic/last.git"
+  },
+  "bugs": "http://github.com/domenic/last/issues",
+  "main": "./lib/last.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "jshint ./lib"
+  },
+  "dependencies": {
+    "q": "~0.9.6"
+  },
+  "devDependencies": {
+    "jshint": "~2.1.5",
+    "mocha": "~1.12"
+  }
+}
