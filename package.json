@@ -24,7 +24,12 @@
     "q": "~0.9.6"
   },
   "devDependencies": {
+    "chai": "~1.7.2",
     "jshint": "~2.1.5",
-    "mocha": "~1.12"
+    "mocha": "~1.12",
+    "mocha-as-promised": "~1.4.0",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0",
+    "chai-as-promised": "~3.3.1"
   }
 }
