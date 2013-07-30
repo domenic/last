@@ -38,6 +38,6 @@ $(searchEl).on("input", function (ev) {
 });
 ```
 
-The wrapped function will return a Q promise. (In future versions, we'll try to return promises of the same type you
-pass in.) Once you call the function again, you will be guaranteed that previously-returned pending promises stay
-pending forever, and so you don't have to worry about them coming back later than your new promise.
+The wrapped function will return a promise of the same type as that returned by the original. And once you call the
+wrapped function again, you will be guaranteed that previously-returned pending promises stay pending forever, so you
+don't have to worry about them coming back later than your new promise.
